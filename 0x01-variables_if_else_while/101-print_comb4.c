@@ -8,15 +8,15 @@
  */
 int main(void)
 {
-	int i;
-	int j;
-	int k;
+	char i;
+	char j;
+	char k;
 	
-	for (i = 0; i <= '7'; i++)
+	for (i = '0'; i <= '7'; i++)
 	{
-		for (j = 0; j <= '8'; j++)
+		for (j = '0'; j <= '8'; j++)
 		{
-			for (k = 0; k <= '9'; k++)
+			for (k = '0'; k <= '9'; k++)
 			{
 				if (i < j && j < k)
 				{
