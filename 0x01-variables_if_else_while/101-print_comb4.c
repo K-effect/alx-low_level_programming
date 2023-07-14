@@ -3,15 +3,20 @@
  * main - print numbers from 00 to 99.
  *
  * Return: 0 on success
- * Description: using putchar, print the smallest combination of three digits followed by a coma and space
+ * Description: using putchar, print the smallest
+ * combination of three digits followed by a coma and space
  */
 int main(void)
 {
-	for( i=0; i <= '7', i++)
+	int i;
+	int j;
+	int k;
+	
+	for ( i=0; i <= '7', i++)
 	{
-		for( j=0; j <= '8', j++)
+		for ( j=0; j <= '8', j++)
 		{
-			for( k=0; k <= '9', k++)
+			for ( k=0; k <= '9', k++)
 			{
 				if (i < j && j < k)
 				{
