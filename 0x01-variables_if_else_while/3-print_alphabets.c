@@ -1,10 +1,11 @@
 #include <stdio.h>
 /**
- * main - Prints the alphabet in both lowercase and uppercase
- *
- * Return: 0 on success
- * Description: using only putchar, print the entire alphabet in lowercase and uppercase
- */
+* main - Prints the alphabet in both lowercase and uppercase
+*
+* Return: 0 on success
+* Description: using only putchar, print 
+* the entire alphabet in lowercase and uppercase
+*/
 int main(void)
 {
 	char c = 'a';
@@ -22,5 +23,4 @@ int main(void)
 	}
 	putchar('\n');
 	return (0);
-
 }
