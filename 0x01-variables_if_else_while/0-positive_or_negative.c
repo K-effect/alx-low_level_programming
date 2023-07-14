@@ -6,6 +6,7 @@
 *
 * Return: 0 when successful
 * Description: prints a message that determines whether a randomly generated number is positive, negative or zero
+*/
 int main(void)
 {
   srand(time(0));
