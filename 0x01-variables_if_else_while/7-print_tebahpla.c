@@ -1,5 +1,3 @@
-prints the lowercase alphabet in revers
-
 #include <stdio.h>
 /**
  * main - print the alphabet in reverse.
@@ -9,9 +7,10 @@ prints the lowercase alphabet in revers
  */
 int main(void)
 {
-	char c = 'z';
-  for (a='z'; a>='a'; a--)
-		putchar(c);
+	char a;
+	
+	for (a='z'; a>='a'; a--)
+		putchar(a);
 	putchar('\n');
 	return (0);
 }
