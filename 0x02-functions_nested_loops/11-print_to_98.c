@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-  * jack_bauer - Print every minute of the day of Jack Bauer
-  * @n number from which to print
-  * Return: void
-  * Description:  Print every minute of the day of Jack Bauer
+  * print_to_98 - Prints all natural numbers from n to 98
+  * @n: The number to start printing from
+  *
+  * Return: Always 0.
   */
 void print_to_98(int n)
 {
@@ -30,10 +30,21 @@ void print_to_98(int n)
 	}
 	else
 		{
+		int b; 
 		for (n = n ; n >= 98; n--)
 		{
-			_putchar(n / 10 + '0');
-			_putchar(n % 10 + '0');
+			if ( n > 99)
+			{
+				b = n/10;
+				_putchar(b / 10 + '0');
+				_putchar(b % 10 + '0');
+				_putchar(n % 10 + '0');
+			}
+			else
+			{
+				_putchar(n / 10 + '0');
+				_putchar(n % 10 + '0');
+			}
 			if ( n != 98)
 			{
 			_putchar(',');
