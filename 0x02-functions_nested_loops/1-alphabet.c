@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* main - print  the alphbabet
+* print_alphabet - print  the alphbabet
 *
 * Return: 0 when successful
 * Description: prints the alphabet in lower 
