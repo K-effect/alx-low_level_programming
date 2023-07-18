@@ -7,8 +7,6 @@
   */
 int _abs(int c)
 {
-  int abs_val;
-  
 	if (c < 0)
 		return (c * -1);
 	else
