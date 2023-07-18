@@ -1,7 +1,7 @@
 #include "main.h"
 /**
   * print_times_table - the n times table, starting with 0.
-  * @n n times table to be printed
+  * @n: n times table to be printed
   *
   * Return: void
   * Description: If n is greater than 15 or less 
