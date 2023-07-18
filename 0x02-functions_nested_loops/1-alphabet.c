@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* print_alphabet - print  the alphbabet
+* print_alphabet - print the alphabet
 *
 * Return: 0 when successful
 * Description: prints the alphabet in lower 
@@ -8,10 +8,10 @@
 */
 void print_alphabet(void)
 {
-  char a;
-  
-  for (a = 'a'; a <= 'z'; a++)
-    _putchar(a);
-  
-  _putchar('\n');
+char a;
+
+for (a = 'a'; a <= 'z'; a++)
+   _putchar(a);
+
+_putchar('\n');
 }
