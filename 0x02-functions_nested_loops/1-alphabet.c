@@ -6,10 +6,12 @@
 * Description: prints the alphabet in lower 
 * case followed by a newline
 */
-void print_alphabet(void){
-char a;
-
-for (a = 'a'; a <= 'z'; a++)
-  _putchar(a);
-_putchar('\n');
+void print_alphabet(void)
+{
+  char a;
+  
+  for (a = 'a'; a <= 'z'; a++)
+    _putchar(a);
+  
+  _putchar('\n');
 }
