@@ -14,6 +14,6 @@ int main(void)
 	for (i = 0; i < 1024; i++)
 		if (i % 3 == 0 || i % 5 == 0)
 			mod += i;
-	printf("%d\n", res);
+	printf("%d\n", mod);
 	return (0);
 }
