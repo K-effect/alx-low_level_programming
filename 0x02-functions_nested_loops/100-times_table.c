@@ -7,7 +7,7 @@
   * Description: If n is greater than 15 or less 
   * than 0 the function should not print anything
   */
-void print_times_table(int n);
+void print_times_table(int n)
 {
   int a, b, prod;
 
