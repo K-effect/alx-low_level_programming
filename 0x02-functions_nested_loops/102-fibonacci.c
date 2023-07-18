@@ -7,7 +7,7 @@
   */
 int main(void)
 {
-	int count, i, j, k;
+	long unsigned int count, i, j, k;
 
 	i = 0;
 	j = 1;
