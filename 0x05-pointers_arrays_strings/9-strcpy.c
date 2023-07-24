@@ -8,6 +8,7 @@
  * the terminating null byte (\0), to the buffer pointed to by dest
  *
  * Return: char
+*/
 char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
