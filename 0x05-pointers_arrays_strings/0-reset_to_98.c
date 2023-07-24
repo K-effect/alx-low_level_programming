@@ -2,7 +2,7 @@
 
 /**
  * reset_to_98 - reset n to 98
- * @n- variable to update
+ * @n: variable to update
  *
  * Return: void
  */
