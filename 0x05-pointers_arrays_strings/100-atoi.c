@@ -9,7 +9,6 @@
 int _atoi(char *s)
 {
 	int i = 0;
-	int j=0;
 	int neg = 1;
 	int length = 0;
 	int f = 0;
@@ -20,12 +19,12 @@ int _atoi(char *s)
 	while (s[length] != '\0')
 	length++;
 	if ( s[j] == 45)
-	neg = -1;
-	while (s[i] >= 48 && s[i] <= 57)
+	neg *= -1;
+	while (s[j] >= 48 && s[j] <= 57)
 	{
-	res = res * 10 + (s[i] - '0');
 	f = 1;
-	i++;
+	res = res * 10 + (s[j] - '0');
+	j++;
 	}
 	if (f == 1)
 	break;
