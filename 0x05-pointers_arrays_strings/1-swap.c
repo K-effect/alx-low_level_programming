@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * swap_int(int *a, int *b) - swap two integers
+ * swap_int - swap two integers
  * @a: pointer to variable 1 to swap
  * @b: pointer to variable 2 to swap
  *
