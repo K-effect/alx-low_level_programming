@@ -10,14 +10,11 @@ int _atoi(char *s)
 {
 	int j = 0;
 	int neg = 1;
-	int length = 0;
 	int f = 0;
-	int res;
+	unsigned int res;
 
 	while(s[j])
 	{
-	while (s[length] != '\0')
-	length++;
 	if ( s[j] == 45)
 	neg *= -1;
 	while (s[j] >= 48 && s[j] <= 57)
