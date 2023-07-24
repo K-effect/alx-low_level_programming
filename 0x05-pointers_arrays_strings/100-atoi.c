@@ -17,12 +17,12 @@ int _atoi(char *s)
 
 	while (s[length] != '\0')
 		length++;
-	for ( i = 0; i < length ; i++
+	for ( i = 0; i < length ; i++)
 	{
 		if (s[i] == '-')
 			neg++;
 	}
-	for ( i = 0; i < length ; i++
+	for ( i = 0; i < length ; i++)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 		{
