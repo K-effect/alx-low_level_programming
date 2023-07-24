@@ -35,7 +35,5 @@ int _atoi(char *s)
 	}
 	if (neg % 2)
 		res = -res;
-	if (f == 0)
-		res = 0;
 	return (res);
 }
