@@ -11,7 +11,7 @@ int _atoi(char *s)
 	int j = 0;
 	int neg = 1;
 	int f = 0;
-	unsigned int res;
+	unsigned int res = 0;
 
 	while(s[j])
 	{
@@ -20,7 +20,7 @@ int _atoi(char *s)
 	while (s[j] >= 48 && s[j] <= 57)
 	{
 	f = 1;
-	res = res * 10 + (s[j] - '0');
+	res = (res * 10) + (s[j] - '0');
 	j++;
 	}
 	if (f == 1)
