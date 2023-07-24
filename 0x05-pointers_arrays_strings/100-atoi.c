@@ -19,20 +19,19 @@ int _atoi(char *s)
 		length++;
 	for ( i = 0; i < length ; i++)
 	{
-		if (s[i] == '-')
+		if (s[i] == 45)
 			neg++;
 	}
 	for ( i = 0; i < length ; i++)
 	{
-		if (s[i] >= '0' && s[i] <= '9')
+		if (s[i] >= 48 && s[i] <= 57)
 		{
 			digit = s[i] - '0';
 			res = res * 10 + digit;
 			f = 1;
-			if (s[i + 1] < '0' || s[i + 1] > '9')
-				break;
-			f = 0;
 		}
+		if f == 1
+			break;
 	}
 	if (neg % 2)
 		res = -res;
