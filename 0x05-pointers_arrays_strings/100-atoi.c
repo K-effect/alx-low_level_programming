@@ -21,15 +21,17 @@ int _atoi(char *s)
 		if (s[i] == 45)
 			neg++;
 	}
-	for ( i = 0; i < length ; i++)
+	while (s[i])
 	{
 		if (s[i] >= 48 && s[i] <= 57)
 		{
 			res = res * 10 + (s[i] - '0');
 			f = 1;
+			i++;
 		}
 		if (f == 1)
 			break;
+		i++;
 	}
 	if (neg % 2)
 		res = -res;
