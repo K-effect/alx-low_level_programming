@@ -9,21 +9,22 @@
 int _atoi(char *s)
 {
 	int i = 0;
-  int neg = 0;
-  int length = 0;
-  int f = 0;
-  int res;
+	int j=0;
+	int neg = 0;
+	int length = 0;
+	int f = 0;
+	int res;
 
-	while (s[length] != '\0')
-		length++;
-	for ( i = 0; i < length ; i++)
+	while(s[j])
 	{
-		if (s[i] == 45)
-			neg++;
-	}
-	while (s[i])
-	{
-		if (s[i] >= 48 && s[i] <= 57)
+		while (s[length] != '\0')
+			length++;
+		for ( i = 0; i < length ; i++)
+		{
+			if (s[i] == 45)
+				neg++;
+		}
+		while (s[i] >= 48 && s[i] <= 57)
 		{
 			res = res * 10 + (s[i] - '0');
 			f = 1;
@@ -31,9 +32,10 @@ int _atoi(char *s)
 		}
 		if (f == 1)
 			break;
-		i++;
+		j++;
 	}
 	if (neg % 2 != 0)
 		res *= -1;
-	return (res);
+	return (res)
 }
+
