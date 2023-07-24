@@ -30,7 +30,7 @@ int _atoi(char *s)
 			res = res * 10 + digit;
 			f = 1;
 		}
-		if f == 1
+		if (f == 1)
 			break;
 	}
 	if (neg % 2)
