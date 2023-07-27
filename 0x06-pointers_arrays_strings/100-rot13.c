@@ -21,7 +21,7 @@ char *rot13(char *c)
 				*(c + i) = rot[j];
 				break;
 			}
-			J++;
+			j++;
 		}
 		i++;
 	}
