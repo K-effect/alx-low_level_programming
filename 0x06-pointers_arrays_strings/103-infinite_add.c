@@ -9,6 +9,36 @@
  *
  * Return: char
  * */
+/**
+ * infinite_add - adds two numbers
+ * @n1: first number to be added
+ * @n2: second number to be added
+ * @r: the buffer that the function will use to store the result
+ * @size_r: the buffer size
+ *
+ * Return: char
+ * */
+char int_to_char(int n)
+{
+    int i = n;
+    int j = 0;
+    int dig = 0;
+
+	while (i / 10)
+	{
+		i = i/10;
+		dig++;
+	}
+	char r[dig];
+	i = n;
+	while( dig >= 0)
+	{
+	    r[j] = i % 10 + '0';
+	    i = i/10;
+	    dig--;
+	}
+	return (*r);
+}
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	unsigned int temp_r;
@@ -45,17 +75,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		return(0);
 	else
 	{
-		r[max_len + 1] = '\0';
-		i = 0;
-		while ( i < max_len )
-		{
-			j = max_len;
-			res = temp_r%pow(10, j);
-			r[i] = (int)temp_r/pow(10, j);
-			i++;
-			j--;
-		}
-		r[max_len] =  res + '0';
+		*r = int_to_char(temp_r);
 		return (r);
 	}
 }
