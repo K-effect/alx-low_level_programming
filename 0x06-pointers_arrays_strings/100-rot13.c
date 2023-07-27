@@ -14,7 +14,7 @@ char *rot13(char *c)
 
 	while (*(c + i) != '\0')
 	{
-		While ( j <= 51 )
+		while ( j <= 51 )
 		{
 			if (*(c + i) == a[j])
 			{
