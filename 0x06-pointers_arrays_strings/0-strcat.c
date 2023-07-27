@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * _strcat - concatenates two strings
- * @src: input array
  * @dest: destination array
+ * @src: input array
  *
  * Return: char
  */
@@ -21,4 +21,3 @@ char *_strcat(char *dest, char *src)
 	}
 	return (dest);
 }
-
