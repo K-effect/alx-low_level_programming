@@ -38,7 +38,7 @@ void print_buffer(char *b, int size)
 			while (i < end)
 			{
 				ch = *(b + i + start);
-				if (!isPrintableASCII(ch))
+				if (ch >= 32 && ch <= 126)
 					ch = 46;
 				printf("%c", ch);
 				i++;
