@@ -14,10 +14,10 @@ char *_strchr(char *s, char c)
         if (s[n-1] == c)
         {
             check++;
-            return(s+n-1)
+            return(s+n-1);
         }
         n--;
     }
     if (check == 0)
-        return (NULL)
+        return (NULL);
 }
