@@ -8,15 +8,14 @@
 *
 *Return:pointer
 */
-
 char *_strpbrk(char *s, char *accept)
 {
 	int i;
 	int n = 0;
-
+	
 	while (s[n])
 	{
-	    i = 0;
+    		i = 0;
 		while (accept[i])
 		{
 			if (s[n] == accept[i])
@@ -27,4 +26,3 @@ char *_strpbrk(char *s, char *accept)
 	}
 	return (NULL);
 }
-
