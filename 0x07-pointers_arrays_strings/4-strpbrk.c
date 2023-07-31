@@ -1,13 +1,13 @@
 #include "main.h"
 /**
-*_strpbrk - locate the first occurrence in
+* _strpbrk - locate the first occurrence in
 * the string s of any of the bytes in accept
 *
-*@s: pointer
-*@accept: located search
+* @s: pointer
+* @accept: located search
 *
-*Return:pointer
-*/
+* Return:pointer
+**/
 char *_strpbrk(char *s, char *accept)
 {
 	int i;
