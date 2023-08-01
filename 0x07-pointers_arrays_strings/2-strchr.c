@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stlib.h>
+#include <stdlib.h>
 /**
  * _strchr- checks if c is in s
  * @s: pointer to check
