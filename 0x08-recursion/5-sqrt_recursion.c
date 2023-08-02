@@ -21,6 +21,7 @@ int check_sqrt(int x, int y)
 	}
 	else
 		return (-1);
+	return (-1);
 }
 /**
  * _sqrt_recursion - returns the natural square root of a number
