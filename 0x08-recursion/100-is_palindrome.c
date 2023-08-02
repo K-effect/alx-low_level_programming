@@ -40,6 +40,6 @@ int get_len(char *s)
 int is_palindrome(char *s)
 {
 	int i = 0;
-	int j = 0;
+
 	return (check_palindrome(s, get_len(s) - 1, i));
 }
