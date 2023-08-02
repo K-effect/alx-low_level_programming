@@ -12,13 +12,13 @@ int check_sqrt(int x, int y)
 
 	if (y < x)
 	{
-		if ( y * y == x)
+		if (y * y == x)
 		{
 			r = y;
 		}
 		else
 		{
-			r = check_sqrt( x, y+1);
+			r = check_sqrt(x, y + 1);
 		}
 	}
 	else
@@ -43,7 +43,7 @@ int _sqrt_recursion(int n)
 	{
 		if (n > 1)
 		{
-			return (check_sqrt( n, r));
+			return (check_sqrt(n, r));
 		}
 		else
 			return (n);
