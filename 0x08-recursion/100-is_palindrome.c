@@ -16,21 +16,30 @@ int check_palindrome(char *s, int len, int i)
 	return (1);
 }
 /**
+ * get_len - calculates the length of a string
+ * @s: input string
+ *
+ * Return: int
+ */
+
+int get_len(char *s)
+{
+	if (*s != '\0')
+	{
+		s++;
+		return (1 + get_len(s));
+	}
+	return (0);
+}
+/**
  * is_palindrome - checks to see if a string is a palindrome
  * @s: the string to check
  *
- * Return: 1 if it's a palindrome, 2 if it's not
+ * Return: int
  */
 int is_palindrome(char *s)
 {
 	int i = 0;
 	int j = 0;
-	int length = 0;
-	
-	while (s[j] != '\0')
-	{
-    		j += 1;
-		length += 1;
-	}
-	return (check_palindrome(s, length-1, i));
+	return (check_palindrome(s, get_len(s) - 1, i));
 }
