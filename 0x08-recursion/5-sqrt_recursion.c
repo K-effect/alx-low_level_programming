@@ -8,15 +8,15 @@
  */
 int check_sqrt(int x, int y)
 {
-	if (r > 0)
+	if (y > 0)
 	{
 		if ( y * y == x)
 		{
-			return (r);
+			return (y);
 		}
 		else
 		{
-			check_sqrt( x, r-1);
+			check_sqrt( x, y-1);
 		}
 	}
 	else
