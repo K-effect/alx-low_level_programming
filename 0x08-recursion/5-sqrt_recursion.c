@@ -30,7 +30,7 @@ int check_sqrt(int x, int y)
  */
 int _sqrt_recursion(int n)
 {
-	int r = int(n / 2);
+	int r = n / 2;
 
 	if (n < 0)
 	{
