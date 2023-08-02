@@ -8,20 +8,21 @@
  */
 int check_sqrt(int x, int y)
 {
-	if (y > 0)
-	{
-		if ( y * y == x)
-		{
-			return (y);
-		}
-		else
-		{
-			check_sqrt( x, y-1);
-		}
-	}
-	else
-		return (-1);
-	return (-1);
+        int r;
+        if (y < x)
+        {
+                if ( y * y == x)
+                {
+                        r = y;
+                }
+                else
+                {
+                        r = check_sqrt( x, y+1);
+                }
+        }
+        else
+                r = -1;
+        return (r);
 }
 /**
  * _sqrt_recursion - returns the natural square root of a number
@@ -31,19 +32,19 @@ int check_sqrt(int x, int y)
  */
 int _sqrt_recursion(int n)
 {
-	int r = n / 2;
+        int r = 2;
 
-	if (n < 0)
-	{
-		return (-1);
-	}
-	else
-	{
-		if (n > 1)
-		{
-			return (check_sqrt( n, r));
-		}
-		else
-			return (n);
-	}
+        if (n < 0)
+        {
+                return (-1);
+        }
+        else
+        {
+                if (n > 1)
+                {
+                        return (check_sqrt( n, r));
+                }
+                else
+                        return (n);
+        }
 }
