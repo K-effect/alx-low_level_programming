@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * palindromeChecker - check if string is palindrome
- * @str: input strength
+ * check_palindrome - check if string is palindrome
+ * @s: input strength
  * @len: the length of the string
  * @i: index to start from
  *
- * Return: 1 if it's a palindrome, 0 if it's not
+ * Return: int
  */
 int check_palindrome(char *s, int len, int i)
 {
