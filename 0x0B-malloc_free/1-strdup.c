@@ -4,7 +4,7 @@
  * _strdup - returns a pointer to a newly allocated space in memory
  * @str: string to copy
  *
- * Return: a pointer or NULL 
+ * Return: a pointer or NULL
  */
 char *_strdup(char *str)
 {
