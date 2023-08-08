@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * create_array - Creates an array of chars 
+ * create_array - Creates an array of chars
  * @size: size of the array
  * @c: the character to initialize the array with
  *
