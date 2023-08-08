@@ -33,8 +33,8 @@ char *argstostr(int ac, char **av)
 	ar = malloc(sizeof(char) * counter);
 	if (ar == NULL)
 		return (NULL);
-    i = 0;
-    j = 0;
+	i = 0;
+	j = 0;
 	while (i < ac)
 	{
 		while (av[i][j] != '\0')
