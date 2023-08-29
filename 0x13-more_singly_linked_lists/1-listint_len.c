@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * print_listintlen - returns the number of elements 
+ * print_listint_len - returns the number of elements
  * in a linked listint_t list
  * @h: the head of the list to print from
  *
@@ -10,11 +10,11 @@ size_t listint_len(const listint_t *h)
 {
 	size_t s;
     
-    s = 0;
+	s = 0;
 	while (h)
 	{
-	    h = h->next;
-	    s++;
+		h = h->next;
+		s++;
 	}
 	return (s);
 }
