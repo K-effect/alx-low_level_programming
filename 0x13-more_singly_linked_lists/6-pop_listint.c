@@ -5,17 +5,24 @@
  * 
  * Return: int
  */
-
 int pop_listint(listint_t **head)
 {
+	int res;
+	listint_t *c;
 	listint_t *temp;
-	int sec;
 
-	if (*head == NULL)
+	if (head == NULL)
 		return (0);
-	temp = *head;
-	sec = temp->n;
-	*head = temp->next;
-	free(temp);
-	return (sec);
+	
+	c= *head;
+	temp = c;
+	if (*head)
+	{
+		res = c->n;
+		*head = c->next;
+		free(temp);
+	}
+	else
+		res = 0;
+	return (res);
 }
