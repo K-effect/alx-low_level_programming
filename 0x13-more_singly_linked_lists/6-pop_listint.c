@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
  * pop_listint - deletes the head node of a list and returns its data
  * @head: the head node of the input list
