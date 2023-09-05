@@ -8,52 +8,36 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int ffrom;
-	int fto;
-	int rd;
-	int clf;
-	int clt;
-	char buff[BUFSIZ];
+	int fd;
+	int wr;
+	int len = 0;
 
-	if (argc != 3)
+	if (filename == NULL)
+		return (-1);
+
+	if (text_content == NULL)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-	
-	ffrom = open(argv[1], O_RDONLY);
-	
-	if (ffrom  == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		return (1);
 	}
 
-	fto = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd = open(filename, O_WRONLY | O_APPEND);
 	
-	while ((rd = read(ffrom, buff, BUFSIZ)) > 0)
-		if (fto == -1 || (write(fto, buff, rd) != rd))
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
-		}
-
-	if (rd == -1)
+	if (fd == -1)
+		return (-1);
+	
+	while (text_content[len])
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		len++;
 	}
 
-	clf = close(ffrom);
-	clt = close(fto);
-	
-	if (clf == -1 || clt == -1)
+	wr = write(fd, text_content, len);
+
+	if (wr == -1)
 	{
-		if (clf == -1)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ffrom);
-		else if (clt == -1)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fto);
-		exit(100);
+		close(fd);
+		return (-1);
 	}
-	return (0);
+	close(fd);
+
+	return (1);
 }
