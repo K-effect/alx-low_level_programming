@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include "main.h"
-
 /**
  * append_text_to_file - Appends text to the end of a file.
  * @filename: The name of the file to append to.
@@ -13,34 +8,52 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-    int file_descriptor, write_status, close_status;
-    size_t text_length = 0;
+	int ffrom;
+	int fto;
+	int rd;
+	int clf;
+	int clt;
+	char buff[BUFSIZ];
 
-    if (filename == NULL)
-        return (-1);
-
-    if (text_content == NULL)
-        return (1);
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
 	
-	while (text_content[text_length] != '\0')
-        text_length++;
+	ffrom = open(argv[1], O_RDONLY);
+	
+	if (ffrom  == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 
-    file_descriptor = open(filename, O_WRONLY | O_APPEND);
-    if (file_descriptor == -1)
-        return (-1);
+	fto = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	
+	while ((rd = read(ffrom, buff, BUFSIZ)) > 0)
+		if (fto == -1 || (write(fto, buff, rd) != rd))
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 
-    write_status = write(file_descriptor, text_content, text_length);
-    if (write_status == -1 || (size_t)write_status != text_length)
-    {
-        close_status = close(file_descriptor);
-        if (close_status == -1)
-            return (-1);
-        return (-1);
-    }
+	if (rd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 
-    close_status = close(file_descriptor);
-    if (close_status == -1)
-        return (-1);
-
-    return (1);
+	clf = close(ffrom);
+	clt = close(fto);
+	
+	if (clf == -1 || clt == -1)
+	{
+		if (clf == -1)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ffrom);
+		else if (clt == -1)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fto);
+		exit(100);
+	}
+	return (0);
 }

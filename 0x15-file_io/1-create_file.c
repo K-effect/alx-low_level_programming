@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include "main.h"
 /**
  * create_file - Creates a file with the specified content.
@@ -12,34 +8,30 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-    int file_descriptor, write_status, close_status;
-    size_t text_length = 0;
+	int wc1;
+	int wc2;
+	int fp;
 
-    if (filename == NULL)
-        return (-1);
+	if (!filename)
+		return (-1);
 
-    if (text_content == NULL)
-        text_content = "";
+	fp = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	
+	if (fp < 0)
+		return (-1);
 
-    while (text_content[text_length] != '\0')
-        text_length++;
+	if (text_content)
+	{
+		wc1 = 0;
+		while (text_content[wc1])
+			wc1++;
 
-    file_descriptor = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
-    if (file_descriptor == -1)
-        return (-1);
-
-    write_status = write(file_descriptor, text_content, text_length);
-    if (write_status == -1 || (size_t)write_status != text_length)
-    {
-        close_status = close(file_descriptor);
-        if (close_status == -1)
-            return (-1);
-        return (-1);
-    }
-
-    close_status = close(file_descriptor);
-    if (close_status == -1)
-        return (-1);
-
-    return (1);
+		wc2 = write(fp, text_content, wc1);
+		
+		if (wc2 != wc1)
+			return (-1);
+	}
+	
+	close(fp);
+	return (1);
 }
