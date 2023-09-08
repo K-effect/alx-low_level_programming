@@ -1,4 +1,3 @@
-#include <sys/types.h>
 #include "main.h" 
 /**
  * read_textfile - Reads and prints the content of a text file.
