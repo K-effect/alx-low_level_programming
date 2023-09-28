@@ -34,7 +34,7 @@ int check_sqrt(int x, int y)
 int _sqrt_recursion(int n)
 {
 	int r = 2;
-	
+
 	if (n < 0)
 	{
 		return (-1);

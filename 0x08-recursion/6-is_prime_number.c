@@ -9,7 +9,7 @@
 int check_prime(int x, int y)
 {
 	int r = 1;
-	
+
 	if (y < x)
 	{
 		if (y * y == x)
@@ -33,10 +33,10 @@ int check_prime(int x, int y)
 int is_prime_number(int n)
 {
 	int r = 2;
-	
+
 	if (n > 1)
 	{
-    		return (check_prime( n, r));
+		return (check_prime( n, r));
 	}
 	else
     		return (0);
