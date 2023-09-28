@@ -36,8 +36,8 @@ int is_prime_number(int n)
 
 	if (n > 1)
 	{
-		return (check_prime( n, r));
+		return (check_prime(n, r));
 	}
 	else
-    		return (0);
+		return (0);
 }
