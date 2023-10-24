@@ -11,28 +11,35 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t node_count = 0;
-	const listint_t *slow;
-	const listint_t *fast;
+	const listint_t *current;
+	int loop_detected = 0;
 
 	if (head == NULL)
-		exit(98);
-	slow = head;
-	fast = head;
-	while (slow && fast && fast->next)
-	{
-		slow = slow->next;
-		fast = fast->next->next;
+		return (node_count);
 
-		if (slow == fast)
+	current = head;
+	while (current)
+	{
+		printf("[%p] %d\n", (void *)current, current->n);
+		node_count++;
+
+		if (loop_detected && current == head)
 		{
-			printf("-> [%p] %d\n", (void *)slow, slow->n);
-			exit(98);
+			printf("-> [%p] %d\n", (void *)current, current->n);
+			break;
 		}
 
-		printf("[%p] %d\n", (void *)slow, slow->n);
-		node_count++;
+		if (current->next >= current)
+		{
+			loop_detected = 1;
+			current = current->next;
+		}
+		else
+		{
+			loop_detected = 0;
+			current = current->next;
+		}
 	}
 
-	return node_count;
+	return (node_count);
 }
-
