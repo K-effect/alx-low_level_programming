@@ -6,44 +6,38 @@
  *
  * Return: The actual number of letters read and printed, 0 on failure.
  */
-ssize_t read_textfile(const char *filename, size_t letters)
-{
-	char *buff;
-	int fd, rd, wr;
+ssize_t read_textfile(const char *filename, size_t letters) {
+    if (filename == NULL) {
+        return 0;
+    }
 
-	if (filename == NULL)
-		return (0);
+    int file_descriptor = open(filename, O_RDONLY);
 
-	buff = malloc(letters);
+    if (file_descriptor == -1) {
+        return 0;
+    }
 
-	if (buff == NULL)
-		return (0);
+    char *buffer = malloc(sizeof(char) * letters);
+    if (buffer == NULL) {
+        close(file_descriptor);
+        return 0;
+    }
 
-	fd = open(filename, O_RDONLY);
+    ssize_t bytes_read = read(file_descriptor, buffer, letters);
+    if (bytes_read == -1) {
+        free(buffer);
+        close(file_descriptor);
+        return 0;
+    }
 
-	if (fd == -1)
-	{
-		free(buff);
-		return (0);
-	}
-	rd = read(fd, buff, letters);
-	if (rd == -1)
-	{
-		free(buff);
-		close(fd);
-		return (0);
-	}
+    ssize_t bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
+    free(buffer);
+    close(file_descriptor);
 
-	wr = write(STDOUT_FILENO, buff, rd);
+    if (bytes_written == -1 || bytes_written != bytes_read) {
+        return 0;
+    }
 
-	if (wr == -1)
-	{
-		free(buff);
-		close(fd);
-		return (0);
-	}
-
-	close(fd);
-	free(buff);
-	return (wr);
+    return bytes_written;
 }
+
